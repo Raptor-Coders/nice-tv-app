@@ -3,6 +3,6 @@
         auto: 'true',
         nav: 'false',
         pager: 'false',
-        timeout: 3000
+        timeout: 10000
     });
 })( jQuery );
