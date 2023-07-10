@@ -1,0 +1,180 @@
+[
+  {
+    "id": 24061,
+    "date": "2023-07-08T23:55:50",
+    "modified": "2023-07-09T00:40:31",
+    "status": "publish",
+    "title": {
+      "rendered": "NICE"
+    },
+    "masjid_profile": {
+      "masjid_name": "NICE",
+      "masjid_address": "23 Wanless Dr, Brampton, ON L7A 0N9 Tel.: (647) 573-6655",
+      "masjid_logo_selector": "gallery",
+      "masjid_logo": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2023\/07\/nice-logo.png",
+      "masjid_gallery": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/masajid-logo-1.png"
+    },
+    "prayer_time": {
+      "calculation_method": "2",
+      "kotakab": "0101",
+      "masjid_coordinates": "43.856189972517,-80.841296988217",
+      "shafaq": "",
+      "asr_calculation": "0",
+      "midnight_mode": "0",
+      "latitude_adjustment_mode": "3",
+      "correction_shubuh": "0",
+      "correction_shuruq": "0",
+      "correction_dhuhr": "0",
+      "correction_asr": "0",
+      "correction_maghrib": "0",
+      "correction_isha": "0",
+      "iqamah_shubuh": "10",
+      "shuruq_duration": "15",
+      "iqamah_dhuhr": "10",
+      "iqamah_asr": "10",
+      "iqamah_maghrib": "10",
+      "iqamah_isha": "10",
+      "show_shalat_jumat": "1",
+      "shalat_jumat_duration": "20",
+      "shalat_jumat_slider": [
+        {
+          "type": "image",
+          "image": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/bg-info-1.webp",
+          "youtube": null,
+          "video": null,
+          "duration": 10000
+        }
+      ],
+      "azan_alarm_sound": "https:\/\/masajid.b-cdn.net\/audio\/alarm-1.mp3",
+      "iqamah_alarm_sound": "https:\/\/masajid.b-cdn.net\/audio\/alarm-1.mp3"
+    },
+    "layout_style": {
+      "theme_layout": "1",
+      "primary_color": "#006dd8",
+      "secondary_color": "#f4e94b",
+      "energy_saving_mode": "0",
+      "energy_saving_duration": "",
+      "layout_direction": "0"
+    },
+    "localization": {
+      "date_time_locale": "gb",
+      "arabic_numeric": "0",
+      "hijri_date_adjustment": "0",
+      "lang_shubuh": "Shubuh",
+      "lang_shuruq": "Shuruq",
+      "lang_dhuhr": "Dhuhr",
+      "lang_asr": "Asr",
+      "lang_maghrib": "Maghrib",
+      "lang_isha": "Isha",
+      "lang_jumat": "Jumu'ah",
+      "lang_now": "Now",
+      "lang_today": "Today",
+      "lang_days_more": "Days More",
+      "lang_forbidden_time": "Forbidden Time to Salah",
+      "lang_time_to_azan": "Time to Athan",
+      "lang_before_iqamah": "Towards Iqamah",
+      "lang_iqamah_text": "Iqamah",
+      "lang_prepare_to_shalat": "Prepare to Shalat",
+      "lang_date_divider": "\/",
+      "lang_hijri_sign": "H"
+    },
+    "main_slider": {
+      "main_slider": [
+        {
+          "type": "image",
+          "image": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/bg-sample-2.webp",
+          "youtube": null,
+          "video": null,
+          "duration": 10000
+        }
+      ]
+    },
+    "jumbotron_slider": {
+      "enable_jumbotron_slider": "0",
+      "jumbotron_duration": "15",
+      "jumbotron_slider": null
+    },
+    "info_slide": {
+      "enable_info_slide": "0",
+      "info_visibility": "5",
+      "info_scrolling_speed": "3",
+      "info_slide_duration": 10000,
+      "info_table": null
+    },
+    "donation_slide": {
+      "enable_donation_slide": "0",
+      "donation_slide_duration": 10000,
+      "donation_description": "Giving infaq is much easier with QRIS. Just scan the qr code below with your phone.",
+      "donation_image_background": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/bg-sample-1.webp",
+      "donation_qr_code": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/sample-qr.png"
+    },
+    "islamic_event": {
+      "islamic_event": null
+    },
+    "running_text": {
+      "running_text_speed": "50",
+      "running_text_direction": "left",
+      "running_text_info": [
+        {
+          "text_info": "Turn off the phone or use silent mode while in the mosque area"
+        },
+        {
+          "text_info": " Keep the mosque clean, tidy and fragranced"
+        },
+        {
+          "text_info": ""
+        }
+      ]
+    },
+    "iqamah_screen": {
+      "iqamah_icon": [
+        {
+          "icon_image": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/ic-iqamah-1.webp"
+        },
+        {
+          "icon_image": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/ic-iqamah-2.webp"
+        },
+        {
+          "icon_image": "https:\/\/masajid-site.b-cdn.net\/wp-content\/uploads\/2021\/11\/ic-iqamah-3.webp"
+        }
+      ],
+      "iqamah_running_text": [
+        {
+          "text_info": "Straighten and tighten the line for the perfection of shalat"
+        },
+        {
+          "text_info": "Turn off communication device or use silent mode during shalat"
+        }
+      ],
+      "iqamah_running_text_speed": "50",
+      "iqamah_running_text_duration": ""
+    },
+    "scheduled_murattal": {
+      "enable_shubuh_murattal": "0",
+      "enable_dhuhr_murattal": "0",
+      "enable_jumat_murattal": "0",
+      "enable_asr_murattal": "0",
+      "enable_maghrib_murattal": "0",
+      "enable_isha_murattal": "0",
+      "enable_morning_dhikr": "0",
+      "enable_evening_dhikr": "0",
+      "shubuh_autoplay_duration": "",
+      "shubuh_play_surah": "",
+      "dhuhr_autoplay_duration": "",
+      "dhuhr_play_surah": "",
+      "jumat_autoplay_duration": "",
+      "jumat_play_surah": "",
+      "asr_autoplay_duration": "",
+      "asr_play_surah": "",
+      "maghrib_autoplay_duration": "",
+      "maghrib_play_surah": "",
+      "isha_autoplay_duration": "",
+      "isha_play_surah": "",
+      "playing_in_morning_dhikr": "",
+      "playing_in_evening_dhikr": ""
+    },
+    "lic": {
+      "duration": "1"
+    }
+  }
+]

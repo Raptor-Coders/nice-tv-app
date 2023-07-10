@@ -1,36 +1,547 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://my.masaj.id/view.masjid?preview=4B24061G0C -->
+<html lang="en" class="screen-size">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex">
+    <title>NICE</title>
+    <link rel="manifest" href="https://my.masaj.id/manifest.json">
+    <link rel="icon" type="image/png" href="https://masajid.b-cdn.net/img/512x512.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Calistoga&family=Oswald">
 
-    <title>Nice Canada Dashboard</title>
-    <style>
-        
-    </style>
-    <link rel="stylesheet" href="css/app.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  </head>
-  <body>
-    
-    <div id="dp-slider">
-      <div data-anim="random">
-        <div style="background-color: black; text-align: center;">
-          <img src="images/eid-adha-2023.jpeg" alt="Image" role='banner'>
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css//bootstrap.min.css">
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css/splide-core.min.css">
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css//splide-extension-video.min.css">
+    <style> #preloader {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: #000;
+        color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #preloader .spinner-border {
+        width: 10vh;
+        height: 10vh;
+        border-width: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    #preloader span.sr-only {
+        display: block;
+        font-size: 4vh;
+    } </style>
+    <script> if (!localStorage.getItem('masajid_assetVersion')) {
+      localStorage.setItem('masajid_assetVersion', Date.now());
+    }
+    var urlDebug = new URLSearchParams(window.location.search), isDebug = urlDebug.get('debug');
+    if (isDebug) {
+      document.write("<link rel='stylesheet' href='https://my.masaj.id/css/style.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
+    } else {
+      document.write("<link rel='stylesheet' href='https://masajid.b-cdn.net/css/style.min.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
+    }
+    //document.write("<link rel='stylesheet' href='https://masajid.b-cdn.net/css/style-alt-" + JSON.parse(localStorage.getItem('masajid_data'))[0].layout_style.theme_layout + ".min.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
+    if (window.innerHeight > window.innerWidth) {
+      document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=1080,user-scalable=no">';
+    } else {
+      if (window.innerWidth < 768) {
+        document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=device-width,user-scalable=no">';
+      } else {
+        document.getElementsByTagName('head')[0].innerHTML += '<meta name="viewport" content="width=1920,user-scalable=no">';
+      }
+    } </script>
+    <script id="dataslayerLaunchMonitors">
+      // console.log('** dataslayer: injecting Launch monitors **');
+      window._satellite = window._satellite || {};
+      window._satellite._monitors = window._satellite._monitors || [];
+      window._satellite._monitors.push({
+        ruleTriggered: function (e) {
+          window.parent.postMessage(
+            {
+              type: 'dataslayer_launchruletriggered',
+              url: window == window.parent ? window.location.href : 'iframe',
+              data: JSON.parse(JSON.stringify(e.rule)),
+            },
+            '*'
+          );
+        },
+        ruleCompleted: function (e) {
+          // console.log('** dataslayer: Launch rule completed **', e.rule);
+          var rule = JSON.parse(JSON.stringify(e.rule));
+          var sendRule = function () {
+            if (window.dataslayer) {
+              window.parent.postMessage(
+                {
+                  type: 'dataslayer_launchrulecompleted',
+                  url: window == window.parent ? window.location.href : 'iframe',
+                  data: rule,
+                },
+                '*'
+              );
+              // console.log('** dataslayer: posted rule '+rule+'**');
+            } else {
+              if (document.readyState === 'complete') {
+                // console.log('** dataslayer: giving up on launch **');
+                window._dataslayerQueue = window._dataslayerQueue || [];
+                window._dataslayerQueue.push({
+                  type: 'dataslayer_launchrulecompleted',
+                  url: window == window.parent ? window.location.href : 'iframe',
+                  data: rule,
+                });
+                return;
+              } else {
+                // console.log('** dataslayer: waiting 250ms to repost rule **');
+                window.setTimeout(sendRule, 250);
+              }
+            }
+          }
+          sendRule();
+          if (
+            window._satellite &&
+            window._satellite._container &&
+            window._satellite._container.dataElements &&
+            true
+          ) {
+            var elementNames = Object.keys(
+              window._satellite._container.dataElements
+            ).sort(function (a, b) {
+              var nameA = a.toUpperCase();
+              var nameB = b.toUpperCase();
+
+              if (nameA < nameB) {
+                return -1;
+              } else if (nameA > nameB) {
+                return 1;
+              } else {
+                return 0;
+              }
+            });
+
+            let launchElements = {};
+
+            for (const elementName of elementNames) {
+              var newElement = JSON.parse(
+                JSON.stringify(
+                  window._satellite._container.dataElements[elementName]
+                )
+              );
+
+              let cleanValue = window._satellite.getVar(elementName);
+              if (typeof cleanValue === 'function') {
+                cleanValue = '(function)';
+              } else if (
+                cleanValue !== null &&
+                typeof cleanValue === 'object' &&
+                typeof cleanValue.then === 'function'
+              ) {
+                cleanValue = '(Promise)';
+              }
+              launchElements[elementName] = cleanValue;
+              // launchElements.push({
+              //   key: elementNames[i],
+              //   value: cleanValue,
+              //   element: newElement,
+              // });
+            }
+            try {
+              window.parent.postMessage(
+                {
+                  type: 'dataslayer_launchdataelements',
+                  data: 'found',
+                  url: window == window.parent ? window.location.href : 'iframe',
+                  elements: launchElements
+                },
+                '*'
+              );
+            } catch (e) {
+              console.warn(e);
+            }
+
+          }
+        },
+        ruleConditionFailed: function (e) {
+          window.parent.postMessage(
+            {
+              type: 'dataslayer_launchrulefailed',
+              url: window == window.parent ? window.location.href : 'iframe',
+              data: JSON.parse(JSON.stringify(e.rule)),
+            },
+            '*'
+          );
+        },
+      });
+    </script>
+    <link rel="stylesheet" href="./NICE_files/style.min.css">
+    <link rel="stylesheet" href="./NICE_files/style-alt-1.min.css">
+    <meta name="viewport" content="width=1920,user-scalable=no">
+
+
+    <style>@keyframes marqueeAnimation-1070889 {
+               100% {
+                   transform: translateX(-2077.984375px)
+               }
+           }</style>
+</head>
+<body class="preview" style="--primary: #006dd8; --secondary: #f4e94b; --primaryDark: #00376c; --primaryLight: #0083ff;"
+      data-new-gr-c-s-check-loaded="14.1114.0" data-gr-ext-installed="">
+<div id="preloader" style="display: none;">
+    <div class="preloader-wrapper">
+        <div class="spinner-border" role="status"></div>
+        <span class="sr-only">Loading...</span></div>
+</div>
+<div class="container-fluid">
+    <div class="row row-shalat-wrapper">
+        <div class="splide main-slider splide--loop splide--ltr splide--draggable is-active is-initialized"
+             id="splide01">
+            <div class="splide__track" id="splide01-track" style="padding-left: 0px; padding-right: 0px;">
+                <ul class="splide__list" id="splide01-list" style="transform: translateX(-2523.53px);">
+                    <li class="splide__slide slider-image is-active splide__slide--clone" data-splide-interval="10000"
+                        id="splide01-clone01"
+                        style="width: calc(100%); height: 630.883px; background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-sample-2.webp&quot;) center center / cover no-repeat;"
+                        aria-hidden="true"><img src="./NICE_files/bg-sample-2.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active splide__slide--clone is-prev"
+                        data-splide-interval="10000" id="splide01-clone02"
+                        style="width: calc(100%); height: 630.883px; background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-sample-2.webp&quot;) center center / cover no-repeat;"
+                        aria-hidden="true"><img src="./NICE_files/bg-sample-2.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active is-visible" data-splide-interval="10000"
+                        id="splide01-slide01" tabindex="0"
+                        style="width: calc(100%); height: 630.883px; background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-sample-2.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-sample-2.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active splide__slide--clone is-next"
+                        data-splide-interval="10000" id="splide01-clone03"
+                        style="width: calc(100%); height: 630.883px; background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-sample-2.webp&quot;) center center / cover no-repeat;"
+                        aria-hidden="true"><img src="./NICE_files/bg-sample-2.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active splide__slide--clone" data-splide-interval="10000"
+                        id="splide01-clone04"
+                        style="width: calc(100%); height: 630.883px; background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-sample-2.webp&quot;) center center / cover no-repeat;"
+                        aria-hidden="true"><img src="./NICE_files/bg-sample-2.webp" style="display: none;"></li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div data-anim="random">
-        <div style="background-color: black; text-align: center;">
-          <img src="images/eid-adha-2023.jpeg" alt="Image" role='banner'>
+        <div class="splide jumbotron">
+            <div class="splide__track">
+                <ul class="splide__list"></ul>
+            </div>
         </div>
-      </div>
-    </div><!-- End slider -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="js/dpTileSlider.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+        <div class="splide jumatan splide--loop splide--ltr splide--draggable is-active is-initialized" id="splide02">
+            <div class="splide__track" id="splide02-track" style="padding-left: 0px; padding-right: 0px;">
+                <ul class="splide__list" id="splide02-list" style="transform: translateX(0px);">
+                    <li class="splide__slide slider-image is-active is-visible splide__slide--clone"
+                        data-splide-interval="10000" id="splide02-clone01" tabindex="0"
+                        style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-info-1.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-info-1.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active is-visible splide__slide--clone is-prev"
+                        data-splide-interval="10000" id="splide02-clone02" tabindex="0"
+                        style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-info-1.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-info-1.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active is-visible" data-splide-interval="10000"
+                        id="splide02-slide01" tabindex="0"
+                        style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-info-1.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-info-1.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active is-visible splide__slide--clone is-next"
+                        data-splide-interval="10000" id="splide02-clone03" tabindex="0"
+                        style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-info-1.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-info-1.webp" style="display: none;"></li>
+                    <li class="splide__slide slider-image is-active is-visible splide__slide--clone"
+                        data-splide-interval="10000" id="splide02-clone04" tabindex="0"
+                        style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/bg-info-1.webp&quot;) center center / cover no-repeat;">
+                        <img src="./NICE_files/bg-info-1.webp" style="display: none;"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="clip-wrapper">
+                <div class="row row-shalat">
+                    <div class="col col-shubuh"><i class="wi wi-horizon-alt"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Fajr</div>
+                            <div class="shalat-time">04:45</div>
+                            <div class="iqamah-time">Iqamah 04:45</div>
+                        </div>
+                    </div>
+                    <div class="col col-shuruq"><i class="wi wi-sunrise"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Shuruq</div>
+                            <div class="shalat-time">05:50</div>
+                            <div class="iqamah-time">05:50 - 06:05</div>
+                        </div>
+                    </div>
+                    <div class="col col-dzuhur"><i class="wi wi-day-sunny"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Dhuhr</div>
+                            <div class="shalat-time">14:01</div>
+                            <div class="iqamah-time">Iqamah 14:00</div>
+                        </div>
+                    </div>
+                    <div class="col col-ashar col-active"><i class="wi wi-day-light-wind"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Asr</div>
+                            <div class="shalat-time">18:45</div>
+                            <div class="iqamah-time">Iqamah 18:45</div>
+                        </div>
+                    </div>
+                    <div class="col col-maghrib"><i class="wi wi-sunset"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Maghrib</div>
+                            <div class="shalat-time">21:07</div>
+                            <div class="iqamah-time">Iqamah 21:17</div>
+                        </div>
+                    </div>
+                    <div class="col col-isya"><i class="wi wi-lunar-eclipse"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Isha</div>
+                            <div class="shalat-time">22:59</div>
+                            <div class="iqamah-time">Iqamah 23:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clock">
+                <div class="screen-clock">
+                    <div class="sc-donasi">
+                        <div class="sc-inner"><img class="qrcode"
+                                                   src="https://my.masaj.id/view.masjid?preview=4B24061G0C"></div>
+                    </div>
+                    <div class="splide sc-afterIqomah splide--loop splide--ltr splide--draggable is-active is-initialized"
+                         id="splide03">
+                        <div class="splide__track" id="splide03-track" style="padding-left: 0px; padding-right: 0px;">
+                            <ul class="splide__list" id="splide03-list" style="transform: translateX(0px);">
+                                <li class="splide__slide slider-image splide__slide--clone is-visible is-active"
+                                    data-splide-interval="5000" id="splide03-clone01"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-2.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-2.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image splide__slide--clone is-visible"
+                                    data-splide-interval="5000" id="splide03-clone02"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-3.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-3.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image is-visible is-prev" data-splide-interval="5000"
+                                    id="splide03-slide01"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-1.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-1.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image is-visible is-active" data-splide-interval="5000"
+                                    id="splide03-slide02"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-2.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-2.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image is-visible is-next" data-splide-interval="5000"
+                                    id="splide03-slide03"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-3.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-3.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image splide__slide--clone is-visible"
+                                    data-splide-interval="5000" id="splide03-clone03"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-1.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-1.webp" style="display: none;"></li>
+                                <li class="splide__slide slider-image splide__slide--clone is-visible is-active"
+                                    data-splide-interval="5000" id="splide03-clone04"
+                                    style="width: calc(100%); background: url(&quot;https://masajid-site.b-cdn.net/wp-content/uploads/2021/11/ic-iqamah-2.webp&quot;) center center / cover no-repeat;"
+                                    tabindex="0"><img src="./NICE_files/ic-iqamah-2.webp" style="display: none;"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="clockface">
+                    <div class="hand hour" style="transform: rotate(596.5deg);"></div>
+                    <div class="hand min" style="transform: rotate(318deg);"></div>
+                    <div class="hand sec" style="transform: rotate(330deg);"></div>
+                    <div class="centerpoint"></div>
+                    <div class="numbers one">1</div>
+                    <div class="numbers two">2</div>
+                    <div class="numbers three">3</div>
+                    <div class="numbers four">4</div>
+                    <div class="numbers five">5</div>
+                    <div class="numbers six">6</div>
+                    <div class="numbers seven">7</div>
+                    <div class="numbers eight">8</div>
+                    <div class="numbers nine">9</div>
+                    <div class="numbers ten">10</div>
+                    <div class="numbers eleven">11</div>
+                    <div class="numbers twelve">12</div>
+                    <div class="fiveminutes"></div>
+                    <div class="minutes"></div>
+                    <div class="clock-brand">iSadaka<br><span>Version 0.0.1</span></div>
+                    <div class="fiveminutes f1" style="transform: rotate(30deg);"></div>
+                    <div class="fiveminutes f2" style="transform: rotate(60deg);"></div>
+                    <div class="fiveminutes f3" style="transform: rotate(90deg);"></div>
+                    <div class="fiveminutes f4" style="transform: rotate(120deg);"></div>
+                    <div class="fiveminutes f5" style="transform: rotate(150deg);"></div>
+                    <div class="fiveminutes f6" style="transform: rotate(180deg);"></div>
+                    <div class="fiveminutes f7" style="transform: rotate(210deg);"></div>
+                    <div class="fiveminutes f8" style="transform: rotate(240deg);"></div>
+                    <div class="fiveminutes f9" style="transform: rotate(270deg);"></div>
+                    <div class="fiveminutes f10" style="transform: rotate(300deg);"></div>
+                    <div class="fiveminutes f11" style="transform: rotate(330deg);"></div>
+                    <div class="fiveminutes f12" style="transform: rotate(360deg);"></div>
+                    <div class="minutes m1" style="transform: rotate(6deg);"></div>
+                    <div class="minutes m2" style="transform: rotate(12deg);"></div>
+                    <div class="minutes m3" style="transform: rotate(18deg);"></div>
+                    <div class="minutes m4" style="transform: rotate(24deg);"></div>
+                    <div class="minutes m5" style="transform: rotate(30deg);"></div>
+                    <div class="minutes m6" style="transform: rotate(36deg);"></div>
+                    <div class="minutes m7" style="transform: rotate(42deg);"></div>
+                    <div class="minutes m8" style="transform: rotate(48deg);"></div>
+                    <div class="minutes m9" style="transform: rotate(54deg);"></div>
+                    <div class="minutes m10" style="transform: rotate(60deg);"></div>
+                    <div class="minutes m11" style="transform: rotate(66deg);"></div>
+                    <div class="minutes m12" style="transform: rotate(72deg);"></div>
+                    <div class="minutes m13" style="transform: rotate(78deg);"></div>
+                    <div class="minutes m14" style="transform: rotate(84deg);"></div>
+                    <div class="minutes m15" style="transform: rotate(90deg);"></div>
+                    <div class="minutes m16" style="transform: rotate(96deg);"></div>
+                    <div class="minutes m17" style="transform: rotate(102deg);"></div>
+                    <div class="minutes m18" style="transform: rotate(108deg);"></div>
+                    <div class="minutes m19" style="transform: rotate(114deg);"></div>
+                    <div class="minutes m20" style="transform: rotate(120deg);"></div>
+                    <div class="minutes m21" style="transform: rotate(126deg);"></div>
+                    <div class="minutes m22" style="transform: rotate(132deg);"></div>
+                    <div class="minutes m23" style="transform: rotate(138deg);"></div>
+                    <div class="minutes m24" style="transform: rotate(144deg);"></div>
+                    <div class="minutes m25" style="transform: rotate(150deg);"></div>
+                    <div class="minutes m26" style="transform: rotate(156deg);"></div>
+                    <div class="minutes m27" style="transform: rotate(162deg);"></div>
+                    <div class="minutes m28" style="transform: rotate(168deg);"></div>
+                    <div class="minutes m29" style="transform: rotate(174deg);"></div>
+                    <div class="minutes m30" style="transform: rotate(180deg);"></div>
+                    <div class="minutes m31" style="transform: rotate(186deg);"></div>
+                    <div class="minutes m32" style="transform: rotate(192deg);"></div>
+                    <div class="minutes m33" style="transform: rotate(198deg);"></div>
+                    <div class="minutes m34" style="transform: rotate(204deg);"></div>
+                    <div class="minutes m35" style="transform: rotate(210deg);"></div>
+                    <div class="minutes m36" style="transform: rotate(216deg);"></div>
+                    <div class="minutes m37" style="transform: rotate(222deg);"></div>
+                    <div class="minutes m38" style="transform: rotate(228deg);"></div>
+                    <div class="minutes m39" style="transform: rotate(234deg);"></div>
+                    <div class="minutes m40" style="transform: rotate(240deg);"></div>
+                    <div class="minutes m41" style="transform: rotate(246deg);"></div>
+                    <div class="minutes m42" style="transform: rotate(252deg);"></div>
+                    <div class="minutes m43" style="transform: rotate(258deg);"></div>
+                    <div class="minutes m44" style="transform: rotate(264deg);"></div>
+                    <div class="minutes m45" style="transform: rotate(270deg);"></div>
+                    <div class="minutes m46" style="transform: rotate(276deg);"></div>
+                    <div class="minutes m47" style="transform: rotate(282deg);"></div>
+                    <div class="minutes m48" style="transform: rotate(288deg);"></div>
+                    <div class="minutes m49" style="transform: rotate(294deg);"></div>
+                    <div class="minutes m50" style="transform: rotate(300deg);"></div>
+                    <div class="minutes m51" style="transform: rotate(306deg);"></div>
+                    <div class="minutes m52" style="transform: rotate(312deg);"></div>
+                    <div class="minutes m53" style="transform: rotate(318deg);"></div>
+                    <div class="minutes m54" style="transform: rotate(324deg);"></div>
+                    <div class="minutes m55" style="transform: rotate(330deg);"></div>
+                    <div class="minutes m56" style="transform: rotate(336deg);"></div>
+                    <div class="minutes m57" style="transform: rotate(342deg);"></div>
+                    <div class="minutes m58" style="transform: rotate(348deg);"></div>
+                    <div class="minutes m59" style="transform: rotate(354deg);"></div>
+                    <div class="minutes m60" style="transform: rotate(360deg);"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row-header">
+                <div class="masjid-id"><img class="masjid-logo" src="./NICE_files/masajid-logo-1.png">
+                    <div><h1 class="masjid-name"><span>NICE</span></h1>
+                        <p class="masjid-address" style="max-width: 468.828px;">23 Wanless Dr, Brampton, ON L7A 0N9
+                            Tel.: (647) 573-6655</p></div>
+                </div>
+                <div class="date-now"
+                     style="background: linear-gradient(to right, rgb(0, 11, 22) 0%, rgb(0, 98, 194) 70%);"><strong>Sunday</strong>
+                    <span class="masehi">9 Jul 2023</span> <span class="date-divider">/</span> <span class="hijri">21 Thul-Hijjah 1444</span><span
+                            class="hijri-sign">H</span></div>
+            </div>
+            <div class="row row-footer">
+                <div class="col col-runningtext">
+                    <ul id="runningtext">
+                        <div style="width: 100000px; transform: translateX(0px); animation: 33.35s linear 1s infinite normal none running marqueeAnimation-1070889;"
+                             class="js-marquee-wrapper">
+                            <div class="js-marquee" style="margin-right: 0px; float: left;">
+                                <li class="rt-item">Turn off the phone or use silent mode while in the mosque area</li>
+                                <li class="rt-item"> Keep the mosque clean, tidy and fragranced</li>
+                                <li class="rt-item"></li>
+                            </div>
+                            <div class="js-marquee" style="margin-right: 0px; float: left;">
+                                <li class="rt-item">Turn off the phone or use silent mode while in the mosque area</li>
+                                <li class="rt-item"> Keep the mosque clean, tidy and fragranced</li>
+                                <li class="rt-item"></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="screen-shuruq popup-screen">
+            <div class="shuruq-wrapper"><h3>Forbidden Time to Salah</h3>
+                <h1 class="shuruq-name"></h1>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                         role="progressbar"></div>
+                    <div class="progress-time"><i class="bi bi-exclamation-circle"></i> <span
+                            class="shuruq-time">00:00</span> - <span class="shuruq-to">00:00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="screen-adzan popup-screen">
+            <div class="adzan-wrapper"><h3>Time to Athan</h3>
+                <h1 class="adzan-name"></h1>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                         role="progressbar"></div>
+                    <div class="progress-time"><i class="bi-alarm"></i> <span class="adzan-time">00:00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="screen-iqomah popup-screen">
+            <div class="iqomah-wrapper"><h3>Towards Iqamah</h3>
+                <div class="iqomah-countdown">
+                    <div class="iqomah-clock"></div>
+                </div>
+                <div class="iqomah-warning">
+                    <div class="iqomah-rtwrapper">
+                        <ul id="iqomah-runningtext">
+                            <li class="irt-item irt-item-shalat"></li>
+                            <li class="irt-item">Straighten and tighten the line for the perfection of shalat</li>
+                            <li class="irt-item">Turn off communication device or use silent mode during shalat</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <audio id="audio-adzan" src="https://masajid.b-cdn.net/audio/alarm-1.mp3"></audio>
+    <audio id="audio-iqomah" src="https://masajid.b-cdn.net/audio/alarm-1.mp3"></audio>
+    <audio id="audio-shuruq" src=""></audio>
+    <audio id="audio-murattal" src=""></audio>
+    <script src="./NICE_files/HackTimer.min.js"></script>
+    <script src="./NICE_files/jquery-3.1.0.min.js"></script>
+    <script src="./NICE_files/bootstrap.bundle.min.js"></script>
+    <script src="./NICE_files/dexie.min.js"></script>
+    <script src="./NICE_files/moment-with-locales.min.js"></script>
+    <script src="./NICE_files/moment-hijri.min.js"></script>
+    <script src="./NICE_files/jquery.easing.min.js"></script>
+    <script src="./NICE_files/jquery.marquee.min.js"></script>
+    <script src="./NICE_files/splide.min.js"></script>
+    <script src="./NICE_files/splide-extension-video.min.js"></script>
+    <script src="./NICE_files/jquery.easy-ticker.min.js"></script>
+    <script src="./NICE_files/jquery.plugin.min.js"></script>
+    <script src="./NICE_files/jquery.countdown.min.js"></script>
+    <script src="./NICE_files/jquery.countdown-ar.min.js"></script>
+    <script src="./NICE_files/iro.min.js"></script>
+    <script src="./NICE_files/nice-script.js"></script>
+    <script src="./NICE_files/script.min.js"></script>
+</body>
+
 </html>
