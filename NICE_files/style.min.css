@@ -156,17 +156,17 @@ audio {
 }
 
 .row-shalat > .col .shalat-wrapper .shalat-time {
-    font-weight: 700;
-    font-size: 7vh
-}
-
-.row-shalat > .col .shalat-wrapper .iqamah-time {
     background: rgba(0, 0, 0, .4);
     display: inline-block;
     text-transform: uppercase;
     padding: .5vh .6vh;
     border-radius: .5vh;
     margin: .2vh 0 0 .2vh
+}
+
+.row-shalat > .col .shalat-wrapper .iqamah-time {
+    font-weight: 700;
+    font-size: 7vh
 }
 
 .clock {

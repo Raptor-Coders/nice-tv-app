@@ -195,7 +195,7 @@ var tShubuh = liveData[0].localization.lang_shubuh,
   tShuruqPre = liveData[0].localization.lang_forbidden_time,
   tAdzan = liveData[0].localization.lang_time_to_azan,
   tIqomah = liveData[0].localization.lang_before_iqamah,
-  tIqomahText = liveData[0].localization.lang_iqamah_text || 'Iqamah',
+  tIqomahText = liveData[0].localization.lang_iqamah_text || '',
   tPrepare = liveData[0].localization.lang_prepare_to_shalat,
   tDateDivider = liveData[0].localization.lang_date_divider,
   tHijriSign = liveData[0].localization.lang_hijri_sign,
@@ -984,24 +984,25 @@ if(shalatMethod == 'kemenag') {
         pvMonth = pvNow.getMonth()+1,
         pvYear = pvNow.getFullYear();
       $.getJSON('https://api-masajid-local.b-cdn.net/v1/sholat/jadwal/1225/'+pvYear+'/'+pvMonth+'/'+pvDay, function(data) {
-        extra = moment().format('YYYY-MM-DD') + ' ',
-          shubuh = moment(extra + data.data.jadwal.subuh).locale(timeLocale).add(adjShubuh,'minutes').format('HH:mm'),
-          shuruq = moment(extra + data.data.jadwal.terbit).locale(timeLocale).add(adjShuruq,'minutes').format('HH:mm'),
-          dzuhur = moment(extra + data.data.jadwal.dzuhur).locale(timeLocale).add(adjDzuhur,'minutes').format('HH:mm'),
-          ashar = moment(extra + data.data.jadwal.ashar).locale(timeLocale).add(adjAshar,'minutes').format('HH:mm'),
-          maghrib = moment(extra + data.data.jadwal.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('HH:mm'),
-          isya = moment(extra + data.data.jadwal.isya).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
-        $('.col-shubuh .shalat-time').html(shubuh);
+        extra = moment().format('YYYY-MM-DD') + ' ';
+        shubuh = moment(extra + schedule.fajr).locale(timeLocale).add(adjShubuh,'minutes').format('h:mm');
+        shuruq = moment(extra + schedule.sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('h:mm');
+        dzuhur = moment(extra + schedule.dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('h:mm');
+        ashar = moment(extra + schedule.asr).locale(timeLocale).add(adjAshar,'minutes').format('h:mm');
+        maghrib = moment(extra + schedule.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('h:mm');
+        isya = moment(extra + schedule.isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
+
+        $('.col-shubuh .shalat-time').html('Waqt ' + shubuh);
         //$('.col-shubuh .iqamah-time').html(tIqomahText + ' ' + moment(extra + shubuh).locale(timeLocale).add(iqoShubuh,'minutes').format('HH:mm'));
-        $('.col-shuruq .shalat-time').html(shuruq);
+        $('.col-shuruq .shalat-time').html('Waqt ' + shuruq);
         $('.col-shuruq .iqamah-time').html(shuruq + ' - ' + moment(extra + shuruq).locale(timeLocale).add(shuruqDuration,'minutes').format('HH:mm'));
-        $('.col-dzuhur .shalat-time').html(dzuhur);
+        $('.col-dzuhur .shalat-time').html('Waqt ' + dzuhur);
         //$('.col-dzuhur .iqamah-time').html(tIqomahText + ' ' + moment(extra + dzuhur).locale(timeLocale).add(iqoDzuhur,'minutes').format('HH:mm'));
-        $('.col-ashar .shalat-time').html(ashar);
+        $('.col-ashar .shalat-time').html('Waqt ' + ashar);
         //$('.col-ashar .iqamah-time').html(tIqomahText + ' ' + moment(extra + ashar).locale(timeLocale).add(iqoAshar,'minutes').format('HH:mm'));
-        $('.col-maghrib .shalat-time').html(maghrib);
-        $('.col-maghrib .iqamah-time').html(tIqomahText + ' ' + maghrib);
-        $('.col-isya .shalat-time').html(isya);
+        $('.col-maghrib .shalat-time').html('Waqt ' + maghrib);
+        $('.col-maghrib .iqamah-time').html(maghrib);
+        $('.col-isya .shalat-time').html('Waqt ' + isya);
         //$('.col-isya .iqamah-time').html(tIqomahText + ' ' + moment(extra + isya).locale(timeLocale).add(iqoIsya,'minutes').format('HH:mm'));
       });
     }
@@ -1033,24 +1034,25 @@ if(shalatMethod == 'kemenag') {
     function getTodayShalat() {
       return db.jadwal.where('tanggal').anyOf(moment().locale('id').format('dddd[,] L'))
         .each(function(jadwal) {
-          extra = moment().format('YYYY-MM-DD') + ' ',
-            shubuh = moment(extra + jadwal.subuh).locale(timeLocale).add(adjShubuh,'minutes').format('HH:mm'),
-            shuruq = moment(extra + jadwal.terbit).locale(timeLocale).add(adjShuruq,'minutes').format('HH:mm'),
-            dzuhur = moment(extra + jadwal.dzuhur).locale(timeLocale).add(adjDzuhur,'minutes').format('HH:mm'),
-            ashar = moment(extra + jadwal.ashar).locale(timeLocale).add(adjAshar,'minutes').format('HH:mm'),
-            maghrib = moment(extra + jadwal.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('HH:mm'),
-            isya = moment(extra + jadwal.isya).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
-          $('.col-shubuh .shalat-time').html(shubuh);
+          extra = moment().format('YYYY-MM-DD') + ' ';
+          shubuh = moment(extra + schedule.fajr).locale(timeLocale).add(adjShubuh,'minutes').format('h:mm');
+          shuruq = moment(extra + schedule.sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('h:mm');
+          dzuhur = moment(extra + schedule.dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('h:mm');
+          ashar = moment(extra + schedule.asr).locale(timeLocale).add(adjAshar,'minutes').format('h:mm');
+          maghrib = moment(extra + schedule.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('h:mm');
+          isya = moment(extra + schedule.isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
+
+          $('.col-shubuh .shalat-time').html('Waqt ' + shubuh);
           //$('.col-shubuh .iqamah-time').html(tIqomahText + ' ' + moment(extra + shubuh).locale(timeLocale).add(iqoShubuh,'minutes').format('HH:mm'));
-          $('.col-shuruq .shalat-time').html(shuruq);
+          $('.col-shuruq .shalat-time').html('Waqt ' + shuruq);
           $('.col-shuruq .iqamah-time').html(shuruq + ' - ' + moment(extra + shuruq).locale(timeLocale).add(shuruqDuration,'minutes').format('HH:mm'));
-          $('.col-dzuhur .shalat-time').html(dzuhur);
+          $('.col-dzuhur .shalat-time').html('Waqt ' + dzuhur);
           //$('.col-dzuhur .iqamah-time').html(tIqomahText + ' ' + moment(extra + dzuhur).locale(timeLocale).add(iqoDzuhur,'minutes').format('HH:mm'));
-          $('.col-ashar .shalat-time').html(ashar);
+          $('.col-ashar .shalat-time').html('Waqt ' + ashar);
           //$('.col-ashar .iqamah-time').html(tIqomahText + ' ' + moment(extra + ashar).locale(timeLocale).add(iqoAshar,'minutes').format('HH:mm'));
-          $('.col-maghrib .shalat-time').html(maghrib);
-          $('.col-maghrib .iqamah-time').html(tIqomahText + ' ' + maghrib);
-          $('.col-isya .shalat-time').html(isya);
+          $('.col-maghrib .shalat-time').html('Waqt ' + maghrib);
+          $('.col-maghrib .iqamah-time').html(maghrib);
+          $('.col-isya .shalat-time').html('Waqt ' + isya);
           //$('.col-isya .iqamah-time').html(tIqomahText + ' ' + moment(extra + isya).locale(timeLocale).add(iqoIsya,'minutes').format('HH:mm'));
         });
     }
@@ -1064,24 +1066,25 @@ if(shalatMethod == 'kemenag') {
         pvYear = pvNow.getFullYear();
       var api = 'https://api-masajid-intl.b-cdn.net/v1/timings/'+pvDay+'-'+pvMonth+'-'+pvYear+'?latitude='+locationID.split(',')[0]+'&longitude='+locationID.split(',')[1]+'&method='+shalatMethod+'&shafaq='+shafaq+'&school='+school+'&midnightMode='+midnightMode+'&latitudeAdjustmentMethod='+lam;
       $.getJSON(api, function(data) {
-        extra = moment().format('YYYY-MM-DD') + ' ',
-          shubuh = moment(extra + data.data.timings.Fajr).locale(timeLocale).add(adjShubuh,'minutes').format('HH:mm'),
-          shuruq = moment(extra + data.data.timings.Sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('HH:mm'),
-          dzuhur = moment(extra + data.data.timings.Dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('HH:mm'),
-          ashar = moment(extra + data.data.timings.Asr).locale(timeLocale).add(adjAshar,'minutes').format('HH:mm'),
-          maghrib = moment(extra + data.data.timings.Maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('HH:mm'),
-          isya = moment(extra + data.data.timings.Isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
-        $('.col-shubuh .shalat-time').html(shubuh);
+        extra = moment().format('YYYY-MM-DD') + ' ';
+        shubuh = moment(extra + schedule.fajr).locale(timeLocale).add(adjShubuh,'minutes').format('h:mm');
+        shuruq = moment(extra + schedule.sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('h:mm');
+        dzuhur = moment(extra + schedule.dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('h:mm');
+        ashar = moment(extra + schedule.asr).locale(timeLocale).add(adjAshar,'minutes').format('h:mm');
+        maghrib = moment(extra + schedule.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('h:mm');
+        isya = moment(extra + schedule.isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
+
+        $('.col-shubuh .shalat-time').html('Waqt ' + shubuh);
         //$('.col-shubuh .iqamah-time').html(tIqomahText + ' ' + moment(extra + shubuh).locale(timeLocale).add(iqoShubuh,'minutes').format('HH:mm'));
-        $('.col-shuruq .shalat-time').html(shuruq);
+        $('.col-shuruq .shalat-time').html('Waqt ' + shuruq);
         $('.col-shuruq .iqamah-time').html(shuruq + ' - ' + moment(extra + shuruq).locale(timeLocale).add(shuruqDuration,'minutes').format('HH:mm'));
-        $('.col-dzuhur .shalat-time').html(dzuhur);
+        $('.col-dzuhur .shalat-time').html('Waqt ' + dzuhur);
         //$('.col-dzuhur .iqamah-time').html(tIqomahText + ' ' + moment(extra + dzuhur).locale(timeLocale).add(iqoDzuhur,'minutes').format('HH:mm'));
-        $('.col-ashar .shalat-time').html(ashar);
+        $('.col-ashar .shalat-time').html('Waqt ' + ashar);
         //$('.col-ashar .iqamah-time').html(tIqomahText + ' ' + moment(extra + ashar).locale(timeLocale).add(iqoAshar,'minutes').format('HH:mm'));
-        $('.col-maghrib .shalat-time').html(maghrib);
-        $('.col-maghrib .iqamah-time').html(tIqomahText + ' ' + maghrib);
-        $('.col-isya .shalat-time').html(isya);
+        $('.col-maghrib .shalat-time').html('Waqt ' + maghrib);
+        $('.col-maghrib .iqamah-time').html(maghrib);
+        $('.col-isya .shalat-time').html('Waqt ' + isya);
         //$('.col-isya .iqamah-time').html(tIqomahText + ' ' + moment(extra + isya).locale(timeLocale).add(iqoIsya,'minutes').format('HH:mm'));
       });
     }
@@ -1115,24 +1118,25 @@ if(shalatMethod == 'kemenag') {
     function getTodayShalat() {
       return db.schedule.where('date').anyOf(moment().locale('id').format('DD-MM-YYYY'))
         .each(function(schedule) {
-          extra = moment().format('YYYY-MM-DD') + ' ',
-            shubuh = moment(extra + schedule.fajr).locale(timeLocale).add(adjShubuh,'minutes').format('HH:mm'),
-            shuruq = moment(extra + schedule.sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('HH:mm'),
-            dzuhur = moment(extra + schedule.dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('HH:mm'),
-            ashar = moment(extra + schedule.asr).locale(timeLocale).add(adjAshar,'minutes').format('HH:mm'),
-            maghrib = moment(extra + schedule.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('HH:mm'),
-            isya = moment(extra + schedule.isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
-          $('.col-shubuh .shalat-time').html(shubuh);
+          extra = moment().format('YYYY-MM-DD') + ' ';
+          shubuh = moment(extra + schedule.fajr).locale(timeLocale).add(adjShubuh,'minutes').format('h:mm');
+          shuruq = moment(extra + schedule.sunrise).locale(timeLocale).add(adjShuruq,'minutes').format('h:mm');
+          dzuhur = moment(extra + schedule.dhuhr).locale(timeLocale).add(adjDzuhur,'minutes').format('h:mm');
+          ashar = moment(extra + schedule.asr).locale(timeLocale).add(adjAshar,'minutes').format('h:mm');
+          maghrib = moment(extra + schedule.maghrib).locale(timeLocale).add(adjMaghrib,'minutes').format('h:mm');
+          isya = moment(extra + schedule.isha).locale(timeLocale).add(adjIsya,'minutes').format('HH:mm');
+
+          $('.col-shubuh .shalat-time').html('Waqt ' + shubuh);
           //$('.col-shubuh .iqamah-time').html(tIqomahText + ' ' + moment(extra + shubuh).locale(timeLocale).add(iqoShubuh,'minutes').format('HH:mm'));
-          $('.col-shuruq .shalat-time').html(shuruq);
+          $('.col-shuruq .shalat-time').html('Waqt ' + shuruq);
           $('.col-shuruq .iqamah-time').html(shuruq + ' - ' + moment(extra + shuruq).locale(timeLocale).add(shuruqDuration,'minutes').format('HH:mm'));
-          $('.col-dzuhur .shalat-time').html(dzuhur);
+          $('.col-dzuhur .shalat-time').html('Waqt ' + dzuhur);
           //$('.col-dzuhur .iqamah-time').html(tIqomahText + ' ' + moment(extra + dzuhur).locale(timeLocale).add(iqoDzuhur,'minutes').format('HH:mm'));
-          $('.col-ashar .shalat-time').html(ashar);
+          $('.col-ashar .shalat-time').html('Waqt ' + ashar);
           //$('.col-ashar .iqamah-time').html(tIqomahText + ' ' + moment(extra + ashar).locale(timeLocale).add(iqoAshar,'minutes').format('HH:mm'));
-          $('.col-maghrib .shalat-time').html(maghrib);
-          $('.col-maghrib .iqamah-time').html(tIqomahText + ' ' + maghrib);
-          $('.col-isya .shalat-time').html(isya);
+          $('.col-maghrib .shalat-time').html('Waqt ' + maghrib);
+          $('.col-maghrib .iqamah-time').html(maghrib);
+          $('.col-isya .shalat-time').html('Waqt ' + isya);
           //$('.col-isya .iqamah-time').html(tIqomahText + ' ' + moment(extra + isya).locale(timeLocale).add(iqoIsya,'minutes').format('HH:mm'));
         });
     }
