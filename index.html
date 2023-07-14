@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://masajid.b-cdn.net/css/weather-icons.min.css">
     <link rel="stylesheet" href="https://masajid.b-cdn.net/css/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://masajid.b-cdn.net/css/splide-core.min.css">
-    <link rel="stylesheet" href="https://masajid.b-cdn.net/css//splide-extension-video.min.css">
+    <link rel="stylesheet" href="https://masajid.b-cdn.net/css/splide-extension-video.min.css">
     <style> #preloader {
         width: 100%;
         height: 100vh;
@@ -53,7 +53,7 @@
     if (isDebug) {
       document.write("<link rel='stylesheet' href='https://my.masaj.id/css/style.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
     } else {
-      document.write("<link rel='stylesheet' href='https://masajid.b-cdn.net/css/style.min.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
+      //document.write("<link rel='stylesheet' href='https://masajid.b-cdn.net/css/style.min.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
     }
     //document.write("<link rel='stylesheet' href='https://masajid.b-cdn.net/css/style-alt-" + JSON.parse(localStorage.getItem('masajid_data'))[0].layout_style.theme_layout + ".min.css?v=" + localStorage.getItem('masajid_assetVersion') + "' \/>");
     if (window.innerHeight > window.innerWidth) {
@@ -271,43 +271,52 @@
                     <div class="col col-shubuh"><i class="wi wi-horizon-alt"></i>
                         <div class="shalat-wrapper">
                             <div class="shalat-name">Fajr</div>
-                            <div class="shalat-time">04:45</div>
-                            <div class="iqamah-time">Iqamah 04:45</div>
+                            <div class="iqamah-time">4:45</div>
+                            <div class="shalat-time">...</div>
                         </div>
                     </div>
-                    <div class="col col-shuruq"><i class="wi wi-sunrise"></i>
-                        <div class="shalat-wrapper">
-                            <div class="shalat-name">Shuruq</div>
-                            <div class="shalat-time">05:50</div>
-                            <div class="iqamah-time">05:50 - 06:05</div>
-                        </div>
-                    </div>
+<!--                    <div class="col col-shuruq"><i class="wi wi-sunrise"></i>-->
+<!--                        <div class="shalat-wrapper">-->
+<!--                            <div class="shalat-name">Shuruq</div>-->
+<!--                            <div class="shalat-time">05:50</div>-->
+<!--                            <div class="iqamah-time">05:50 - 06:05</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col col-dzuhur"><i class="wi wi-day-sunny"></i>
                         <div class="shalat-wrapper">
                             <div class="shalat-name">Dhuhr</div>
-                            <div class="shalat-time">14:01</div>
-                            <div class="iqamah-time">Iqamah 14:00</div>
+                            <div class="iqamah-time">2:00</div>
+                            <div class="shalat-time">...</div>
                         </div>
                     </div>
                     <div class="col col-ashar col-active"><i class="wi wi-day-light-wind"></i>
                         <div class="shalat-wrapper">
                             <div class="shalat-name">Asr</div>
-                            <div class="shalat-time">18:45</div>
-                            <div class="iqamah-time">Iqamah 18:45</div>
+                            <div class="iqamah-time">6:45</div>
+                            <div class="shalat-time">...</div>
                         </div>
                     </div>
                     <div class="col col-maghrib"><i class="wi wi-sunset"></i>
                         <div class="shalat-wrapper">
                             <div class="shalat-name">Maghrib</div>
-                            <div class="shalat-time">21:07</div>
-                            <div class="iqamah-time">Iqamah 21:17</div>
+                            <div class="iqamah-time">...</div>
+                            <div class="shalat-time">...</div>
                         </div>
                     </div>
                     <div class="col col-isya"><i class="wi wi-lunar-eclipse"></i>
                         <div class="shalat-wrapper">
                             <div class="shalat-name">Isha</div>
-                            <div class="shalat-time">22:59</div>
-                            <div class="iqamah-time">Iqamah 23:00</div>
+                            <div class="iqamah-time">11:00</div>
+                            <div class="shalat-time">...</div>
+                        </div>
+                    </div>
+                    <div class="col col-jummah"><i class="wi wi-hot"></i>
+                        <div class="shalat-wrapper">
+                            <div class="shalat-name">Jummah</div>
+                            <p>
+                                <div class="shalat-time">1:30</div> and
+                                <div class="shalat-time">2:30</div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -453,7 +462,7 @@
             <div class="row-header">
                 <div class="masjid-id"><img class="masjid-logo" src="./NICE_files/masajid-logo-1.png">
                     <div><h1 class="masjid-name"><span>NICE</span></h1>
-                        <p class="masjid-address" style="max-width: 468.828px;">23 Wanless Dr, Brampton, ON L7A 0N9
+                        <p class="masjid-address" style="max-width: 468.828px; font-size: .8em;">423 Wanless Dr, Brampton, ON L7A 0N9
                             Tel.: (647) 573-6655</p></div>
                 </div>
                 <div class="date-now"
@@ -469,12 +478,7 @@
                             <div class="js-marquee" style="margin-right: 0px; float: left;">
                                 <li class="rt-item">Turn off the phone or use silent mode while in the mosque area</li>
                                 <li class="rt-item"> Keep the mosque clean, tidy and fragranced</li>
-                                <li class="rt-item"></li>
-                            </div>
-                            <div class="js-marquee" style="margin-right: 0px; float: left;">
-                                <li class="rt-item">Turn off the phone or use silent mode while in the mosque area</li>
-                                <li class="rt-item"> Keep the mosque clean, tidy and fragranced</li>
-                                <li class="rt-item"></li>
+                                <li class="rt-item"> Please donate generously at https://www.nice-canada.com/</li>
                             </div>
                         </div>
                     </ul>
